@@ -17,3 +17,4 @@ Open api documentation with this link (http://localhost:3000/api/docs)
 - `npm i` — Install all dependencies.
 - `npx prisma generate` — Sychronization with database.
 - `npm run start:dev` — Run app locally.
+- `npm run test:watch` — Run tests.
