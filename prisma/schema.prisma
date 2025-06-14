@@ -1,0 +1,28 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model StaffMember {
+  id           Int           @id @default(autoincrement())
+  name         String
+  lastName     String
+  email        String        @unique
+  joinedDate   DateTime
+  baseSalary   Int
+  role         Role
+  supervisorId Int?
+  supervisor   StaffMember?  @relation("Subordinates", fields: [supervisorId], references: [id], onDelete: SetNull)
+  subordinates StaffMember[] @relation("Subordinates")
+}
+
+enum Role {
+  EMPLOYEE
+  MANAGER
+  SALES
+}
