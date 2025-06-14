@@ -8,7 +8,7 @@ API documentation was added using Swagger.
 ## Stack
 - Nest.js
 - SQLite
-- PostgreSQL
+- PrismaORM
 
 ## API Documentation
 Open api documentation with this link (http://localhost:3000/api/docs)
